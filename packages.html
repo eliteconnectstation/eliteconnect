@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Connect | Packages</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  padding: 20px 10%;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 10% 50px;
+  background: linear-gradient(135deg, #020617, #1e3a8a);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+header p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* PACKAGES */
+.packages {
+  padding: 70px 10%;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.package {
+  background: #020617;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid #1e293b;
+  transition: 0.3s;
+}
+
+.package:hover {
+  transform: translateY(-6px);
+  border-color: #34d399;
+}
+
+.package h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 2rem;
+  color: #34d399;
+  margin-bottom: 20px;
+}
+
+.package ul {
+  list-style: none;
+  margin-bottom: 25px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.package ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+  position: relative;
+}
+
+.package ul li::before {
+  content: '✔';
+  color: #34d399;
+  position: absolute;
+  left: -20px;
+}
+
+/* BUTTON */
+.package a {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #34d399;
+  color: #020617;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.package a:hover {
+  background: #059669;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #020617;
+  border-top: 1px solid #1e293b;
+  margin-top: 50px;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+  }
+
+  .packages-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .package {
+    padding: 25px 15px;
+  }
+
+  .price {
+    font-size: 1.8rem;
+  }
+
+  .package h3 {
+    font-size: 1.3rem;
+  }
+
+  .package ul li {
+    font-size: 0.9rem;
+    padding-left: 0;
+  }
+
+  .package ul li::before {
+    left: -15px;
+  }
+}
+
+/* Extra small screens <480px */
+@media(max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+  }
+
+  .package h3 {
+    font-size: 1.2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">← Back to Home</a>
+</nav>
+
+<header>
+  <h1>Our Packages</h1>
+  <p>
+    Choose the right package for your business needs.
+    All packages are designed to deliver consistent,
+    high-quality results.
+  </p>
+</header>
+
+<section class="packages">
+  <div class="packages-grid">
+
+    <!-- BRONZE -->
+    <div class="package">
+      <h3>Bronze Package</h3>
+      <div class="price">$200</div>
+      <ul>
+        <li>20 Telemarketing Hours</li>
+        <li>Prequalified Appointments</li>
+        <li>Lead Information</li>
+        <li>Call Recordings</li>
+      </ul>
+      <a href="index.html#contact">Get Started</a>
+    </div>
+
+    <!-- SILVER -->
+    <div class="package">
+      <h3>Silver Package</h3>
+      <div class="price">$300</div>
+      <ul>
+        <li>40 Telemarketing Hours</li>
+        <li>Prequalified Appointments</li>
+        <li>Customized Script</li>
+        <li>Tracking and Reports</li>
+        <li>Lead Information</li>
+        <li>Hours Split</li>
+        <li>Call Recordings</li>
+      </ul>
+      <a href="index.html#contact">Get Started</a>
+    </div>
+
+    <!-- GOLD -->
+    <div class="package">
+      <h3>Gold Package</h3>
+      <div class="price">$450</div>
+      <ul>
+        <li>60 Telemarketing Hours</li>
+        <li>Prequalified Appointments</li>
+        <li>Customized Script</li>
+        <li>Tracking and Reports</li>
+        <li>Lead Information</li>
+        <li>Hours Split</li>
+        <li>Call Recordings</li>
+        <li>Calendar Scheduling</li>
+        <li>Daily Follow Up</li>
+        <li>Exclusive Assistance</li>
+      </ul>
+      <a href="index.html#contact">Get Started</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Elite Connect. All Rights Reserved.
+</footer>
+
+</body>
+</html>
