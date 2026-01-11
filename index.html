@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Connect | Packages</title>
+<title>Elite Connect</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -21,9 +21,20 @@ body {
   line-height: 1.6;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px 10%;
+  position: relative;
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
 }
 
 nav a {
@@ -32,159 +43,269 @@ nav a {
   font-weight: 500;
 }
 
-/* HEADER */
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* ================= HEADER ================= */
 header {
-  text-align: center;
-  padding: 80px 10% 50px;
   background: linear-gradient(135deg, #020617, #1e3a8a);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  padding: 120px 10% 80px;
 }
 
-header h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
+.header-text h1 {
+  font-size: 3rem;
 }
 
-header p {
-  font-size: 1rem;
-  max-width: 600px;
+.header-text p {
+  margin-top: 20px;
+  max-width: 520px;
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+.header-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #34d399, #10b981);
+  color: #020617;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 25px rgba(52, 211, 153, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(52, 211, 153, 0.5);
+}
+
+.btn-secondary {
+  padding: 12px 30px;
+  border: 2px solid #34d399;
+  color: #34d399;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #34d399;
+  color: #020617;
+}
+
+.header-logo img {
+  width: 100%;
+  max-width: 400px;
   margin: auto;
+  display: block;
 }
 
-/* PACKAGES */
-.packages {
-  padding: 70px 10%;
+/* ================= SECTIONS ================= */
+section {
+  padding: 80px 10%;
 }
 
-.packages-grid {
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+}
+
+/* ================= SERVICES ================= */
+.services-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  gap: 50px;
 }
 
-.package {
-  background: #020617;
-  border-radius: 16px;
-  padding: 30px 20px;
-  text-align: center;
-  border: 1px solid #1e293b;
-  transition: 0.3s;
+.service-item {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
 }
 
-.package:hover {
-  transform: translateY(-6px);
-  border-color: #34d399;
+.service-dot {
+  width: 18px;
+  height: 18px;
+  background: #7f1d1d;
+  border-radius: 50%;
+  margin-top: 8px;
+  flex-shrink: 0;
 }
 
-.package h3 {
-  font-size: 1.4rem;
+.service-content h3 {
+  font-size: 1.3rem;
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
-.price {
+.service-content p {
+  color: #cbd5f5;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ================= PROCESS ================= */
+.process {
+  background: linear-gradient(180deg, #f1f5fb 0%, #ffffff 100%);
+  color: #020617;
+}
+
+.process-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.process-text h2 {
+  text-align: left;
   font-size: 2rem;
-  color: #34d399;
   margin-bottom: 20px;
 }
 
-.package ul {
-  list-style: none;
-  margin-bottom: 25px;
-  text-align: left;
-  padding-left: 20px;
+.process-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 520px;
 }
 
-.package ul li {
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-  color: #cbd5f5;
-  position: relative;
+.process-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
 
-.package ul li::before {
-  content: '✔';
-  color: #34d399;
-  position: absolute;
-  left: -20px;
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
 }
 
-/* BUTTON */
-.package a {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #34d399;
-  color: #020617;
-  border-radius: 25px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
+.feature span {
+  font-size: 1.2rem;
 }
 
-.package a:hover {
-  background: #059669;
+.process-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: auto;
 }
 
-/* FOOTER */
-footer {
+/* ================= CONTACT ================= */
+.contact-box {
   text-align: center;
-  padding: 25px;
-  background: #020617;
-  border-top: 1px solid #1e293b;
-  margin-top: 50px;
 }
 
-/* MOBILE */
+.contact-box .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contact-box .phone,
+.contact-box .email {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #34d399;
+  background: #0f172a;
+  padding: 12px 25px;
+  border-radius: 12px;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-box .phone:hover,
+.contact-box .email:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(52, 211, 153, 0.5);
+}
+
+/* ================= MOBILE ================= */
 @media(max-width: 768px) {
-  header h1 {
-    font-size: 2.2rem;
-  }
-
-  header p {
-    font-size: 0.95rem;
-  }
-
-  .packages-grid {
+  header {
     grid-template-columns: 1fr;
-    gap: 20px;
+    text-align: center;
+    padding: 80px 5% 60px;
   }
 
-  .package {
-    padding: 25px 15px;
+  .header-buttons {
+    justify-content: center;
   }
 
-  .price {
-    font-size: 1.8rem;
+  .services-list {
+    grid-template-columns: 1fr;
   }
 
-  .package h3 {
-    font-size: 1.3rem;
+  .service-item {
+    flex-direction: row;
+    justify-content: flex-start;
   }
 
-  .package ul li {
-    font-size: 0.9rem;
-    padding-left: 0;
+  .process-container {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
-  .package ul li::before {
-    left: -15px;
-  }
-}
-
-/* Extra small screens <480px */
-@media(max-width: 480px) {
-  header h1 {
-    font-size: 1.8rem;
+  .process-features {
+    grid-template-columns: 1fr;
   }
 
-  header p {
-    font-size: 0.9rem;
-  }
-
-  .price {
+  .process-text h2 {
     font-size: 1.6rem;
   }
 
-  .package h3 {
-    font-size: 1.2rem;
+  .process-text p {
+    font-size: 0.95rem;
+  }
+
+  .header-logo img {
+    max-width: 300px;
+    margin-top: 20px;
+  }
+}
+
+/* Extra small screens */
+@media(max-width: 480px) {
+  .header-text h1 {
+    font-size: 2rem;
+  }
+
+  .process-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .process-text p {
+    font-size: 0.9rem;
   }
 }
 </style>
@@ -192,77 +313,119 @@ footer {
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="index.html">← Back to Home</a>
+  <div class="logo"><a href="index.html">Elite Connect</a></div>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
+<!-- HEADER -->
 <header>
-  <h1>Our Packages</h1>
-  <p>
-    Choose the right package for your business needs.
-    All packages are designed to deliver consistent,
-    high-quality results.
-  </p>
+  <div class="header-text">
+    <h1>Elite Connect</h1>
+    <p>
+      We connect businesses with professional telemarketing,
+      customer service, and recruitment solutions.
+    </p>
+
+    <div class="header-buttons">
+      <a href="packages.html" class="btn-primary">View Packages</a>
+      <a href="#contact" class="btn-secondary">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="header-logo">
+    <img src="../logo.png.png" alt="Elite Connect Logo">
+  </div>
 </header>
 
-<section class="packages">
-  <div class="packages-grid">
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Services</h2>
 
-    <!-- BRONZE -->
-    <div class="package">
-      <h3>Bronze Package</h3>
-      <div class="price">$200</div>
-      <ul>
-        <li>20 Telemarketing Hours</li>
-        <li>Prequalified Appointments</li>
-        <li>Lead Information</li>
-        <li>Call Recordings</li>
-      </ul>
-      <a href="index.html#contact">Get Started</a>
+  <div class="services-list">
+    <div class="service-item">
+      <div class="service-dot"></div>
+      <div class="service-content">
+        <h3>Telemarketing & Lead Generation</h3>
+        <p>
+          We help businesses connect with high-quality prospects and convert
+          them into loyal customers through targeted campaigns.
+        </p>
+      </div>
     </div>
 
-    <!-- SILVER -->
-    <div class="package">
-      <h3>Silver Package</h3>
-      <div class="price">$300</div>
-      <ul>
-        <li>40 Telemarketing Hours</li>
-        <li>Prequalified Appointments</li>
-        <li>Customized Script</li>
-        <li>Tracking and Reports</li>
-        <li>Lead Information</li>
-        <li>Hours Split</li>
-        <li>Call Recordings</li>
-      </ul>
-      <a href="index.html#contact">Get Started</a>
+    <div class="service-item">
+      <div class="service-dot"></div>
+      <div class="service-content">
+        <h3>Customer Service</h3>
+        <p>
+          Professional phone, email, and live chat support handled by trained agents.
+        </p>
+      </div>
     </div>
 
-    <!-- GOLD -->
-    <div class="package">
-      <h3>Gold Package</h3>
-      <div class="price">$450</div>
-      <ul>
-        <li>60 Telemarketing Hours</li>
-        <li>Prequalified Appointments</li>
-        <li>Customized Script</li>
-        <li>Tracking and Reports</li>
-        <li>Lead Information</li>
-        <li>Hours Split</li>
-        <li>Call Recordings</li>
-        <li>Calendar Scheduling</li>
-        <li>Daily Follow Up</li>
-        <li>Exclusive Assistance</li>
-      </ul>
-      <a href="index.html#contact">Get Started</a>
+    <div class="service-item">
+      <div class="service-dot"></div>
+      <div class="service-content">
+        <h3>Insurance Agent Recruiting</h3>
+        <p>
+          We recruit qualified insurance agents using a professional,
+          data-driven hiring process.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-container">
+
+    <div class="process-text">
+      <h2>How do we connect you with qualified leads for your business?</h2>
+      <p>
+        We use proven strategies and advanced analytics to deliver highly targeted
+        leads tailored to your business goals. By leveraging multiple online platforms
+        and data-driven processes, we ensure consistent, high-quality results.
+      </p>
+
+      <div class="process-features">
+        <div class="feature"><span>🎙️</span>Call Recordings</div>
+        <div class="feature"><span>📊</span>Daily Reports</div>
+        <div class="feature"><span>📝</span>Customized Scripts</div>
+        <div class="feature"><span>🎧</span>Fluent English Speakers</div>
+      </div>
+    </div>
+
+    <div class="process-image">
+      <img src="logo2.png" alt="Qualified Leads">
     </div>
 
   </div>
 </section>
 
+
+  <div class="contact-box">
+    <p>Get in touch with our team today</p>
+    <div class="contact-info">
+      <div class="phone">📞 +1 239-480-4946</div>
+      <div class="email">✉️ contact@eliteconnect.com</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   © 2026 Elite Connect. All Rights Reserved.
 </footer>
 
 </body>
 </html>
+
+
 
