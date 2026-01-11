@@ -1,119 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elite Connect</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-    body { background: #0f172a; color: #e5e7eb; line-height: 1.6; }
-    
-    header { 
-      padding: 60px 10%; 
-      background: linear-gradient(135deg, #0f172a, #1e3a8a); 
-      color: white;
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      border-bottom: 3px solid #34d399;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Connect | Packages</title>
 
-    .header-content h1 { font-size: 3.5rem; color: #ffffff; }
-    .header-content p { max-width: 600px; margin-top: 20px; font-size: 1.1rem; }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    /* التحكم بحجم اللوغو من هنا */
-    .header-logo img {
-      width: 450px; /* تم تكبير الحجم جداً هنا */
-      height: auto;
-      display: block;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
 
-    section { padding: 80px 10%; }
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .card { background: #020617; padding: 30px; border-radius: 16px; border: 1px solid #1e293b; transition: 0.3s; }
-    .card:hover { border-color: #34d399; transform: translateY(-5px); }
-    .card h3 { margin-bottom: 10px; color: #34d399; }
-    
-    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .about div { background: #020617; padding: 30px; border-radius: 16px; border-left: 5px solid #34d399; }
-    
-    .contact form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-    input, textarea { padding: 12px; border-radius: 8px; border: 1px solid #1e293b; background: #1e293b; color: white; }
-    button { padding: 12px; border: none; border-radius: 8px; background: #34d399; color: #020617; font-weight: bold; font-size: 1rem; cursor: pointer; transition: 0.3s; }
-    button:hover { background: #059669; }
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
 
-    footer { text-align: center; padding: 30px; background: #020617; border-top: 1px solid #1e293b; margin-top: 60px; }
+/* NAV */
+nav {
+  padding: 20px 10%;
+}
 
-    @media(max-width: 992px){ .header-logo img { width: 300px; } }
-    @media(max-width: 768px){ 
-      header { flex-direction: column-reverse; text-align: center; padding: 40px 5%; }
-      .header-logo img { width: 250px; margin-bottom: 20px; }
-    }
-  </style>
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 10% 50px;
+  background: linear-gradient(135deg, #020617, #1e3a8a);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+header p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* PACKAGES */
+.packages {
+  padding: 70px 10%;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.package {
+  background: #020617;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid #1e293b;
+  transition: 0.3s;
+}
+
+.package:hover {
+  transform: translateY(-6px);
+  border-color: #34d399;
+}
+
+.package h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 2rem;
+  color: #34d399;
+  margin-bottom: 20px;
+}
+
+.package ul {
+  list-style: none;
+  margin-bottom: 25px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.package ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+  position: relative;
+}
+
+.package ul li::before {
+  content: '✔';
+  color: #34d399;
+  position: absolute;
+  left: -20px;
+}
+
+/* BUTTON */
+.package a {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #34d399;
+  color: #020617;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.package a:hover {
+  background: #059669;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #020617;
+  border-top: 1px solid #1e293b;
+  margin-top: 50px;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+  }
+
+  .packages-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .package {
+    padding: 25px 15px;
+  }
+
+  .price {
+    font-size: 1.8rem;
+  }
+
+  .package h3 {
+    font-size: 1.3rem;
+  }
+
+  .package ul li {
+    font-size: 0.9rem;
+    padding-left: 0;
+  }
+
+  .package ul li::before {
+    left: -15px;
+  }
+}
+
+/* Extra small screens <480px */
+@media(max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+  }
+
+  .package h3 {
+    font-size: 1.2rem;
+  }
+}
+</style>
 </head>
+
 <body>
 
+<nav>
+  <a href="index.html">← Back to Home</a>
+</nav>
+
 <header>
-  <div class="header-content">
-    <h1>Elite Connect</h1>
-    <p>We connect businesses with smart solutions in customer support, digital marketing, and growth operations.</p>
-  </div>
-  <div class="header-logo">
-    <img src="logo.png"> 
-  </div>
+  <h1>Our Packages</h1>
+  <p>
+    Choose the right package for your business needs.
+    All packages are designed to deliver consistent,
+    high-quality results.
+  </p>
 </header>
 
-<section>
-  <h2 style="margin-bottom: 40px; font-size: 2rem;">Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Outbound Sales</h3>
-      <p>Professional calling campaigns designed to convert prospects into real customers.</p>
-    </div>
-    <div class="card">
-      <h3>Lead Development</h3>
-      <p>Targeted lead generation strategies to fuel your sales pipeline.</p>
-    </div>
-    <div class="card">
-      <h3>Customer Support</h3>
-      <p>Reliable phone, email, and chat support handled by trained agents.</p>
-    </div>
-    <div class="card">
-      <h3>Digital Presence</h3>
-      <p>Website creation and social media management tailored to your brand.</p>
-    </div>
-  </div>
-</section>
+<section class="packages">
+  <div class="packages-grid">
 
-<section class="about">
-  <div>
-    <h2>Who We Are</h2>
-    <p>Elite Connect is a global business support company helping brands scale efficiently through people, process, and technology.</p>
-  </div>
-  <div>
-    <h2>Why Choose Us</h2>
-    <ul style="list-style: none;">
-      <li style="margin-bottom: 10px;">✔ Experienced multilingual teams</li>
-      <li style="margin-bottom: 10px;">✔ Flexible service models</li>
-      <li style="margin-bottom: 10px;">✔ Results-driven approach</li>
-    </ul>
-  </div>
-</section>
+    <!-- BRONZE -->
+    <div class="package">
+      <h3>Bronze Package</h3>
+      <div class="price">$200</div>
+      <ul>
+        <li>20 Telemarketing Hours</li>
+        <li>Prequalified Appointments</li>
+        <li>Lead Information</li>
+        <li>Call Recordings</li>
+      </ul>
+      <a href="index.html#contact">Get Started</a>
+    </div>
 
-<section class="contact">
-  <h2 style="text-align:center; margin-bottom: 30px;">Contact Us</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea rows="4" placeholder="Your Message"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+    <!-- SILVER -->
+    <div class="package">
+      <h3>Silver Package</h3>
+      <div class="price">$300</div>
+      <ul>
+        <li>40 Telemarketing Hours</li>
+        <li>Prequalified Appointments</li>
+        <li>Customized Script</li>
+        <li>Tracking and Reports</li>
+        <li>Lead Information</li>
+        <li>Hours Split</li>
+        <li>Call Recordings</li>
+      </ul>
+      <a href="index.html#contact">Get Started</a>
+    </div>
+
+    <!-- GOLD -->
+    <div class="package">
+      <h3>Gold Package</h3>
+      <div class="price">$450</div>
+      <ul>
+        <li>60 Telemarketing Hours</li>
+        <li>Prequalified Appointments</li>
+        <li>Customized Script</li>
+        <li>Tracking and Reports</li>
+        <li>Lead Information</li>
+        <li>Hours Split</li>
+        <li>Call Recordings</li>
+        <li>Calendar Scheduling</li>
+        <li>Daily Follow Up</li>
+        <li>Exclusive Assistance</li>
+      </ul>
+      <a href="index.html#contact">Get Started</a>
+    </div>
+
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 Elite Connect. All rights reserved.</p>
+  © 2026 Elite Connect. All Rights Reserved.
 </footer>
 
 </body>
 </html>
+
