@@ -1,431 +1,315 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Elite Connect";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Connect</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Connect</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body {
-  background: #0f172a;
-  color: #e5e7eb;
-  line-height: 1.6;
-}
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
 
-/* ================= NAV ================= */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  position: relative;
-  z-index: 10;
-}
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            position: relative;
+            z-index: 10;
+        }
 
-nav ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-}
+            nav ul {
+                display: flex;
+                gap: 30px;
+                list-style: none;
+            }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+            }
 
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #020617, #1e3a8a);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            padding: 120px 10% 80px;
+        }
 
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-}
+        .header-text h1 {
+            font-size: 3rem;
+        }
 
-/* ================= HEADER ================= */
-header {
-  background: linear-gradient(135deg, #020617, #1e3a8a);
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  align-items: center;
-  padding: 120px 10% 80px;
-}
+        .header-text p {
+            margin-top: 20px;
+            max-width: 520px;
+            font-size: 1.1rem;
+        }
 
-.header-text h1 {
-  font-size: 3rem;
-}
+        .header-buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
 
-.header-text p {
-  margin-top: 20px;
-  max-width: 520px;
-  font-size: 1.1rem;
-}
+        .btn-primary {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #34d399, #10b981);
+            color: #020617;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+        }
 
-/* Buttons */
-.header-buttons {
-  margin-top: 25px;
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
+        .btn-secondary {
+            padding: 12px 30px;
+            border: 2px solid #34d399;
+            color: #34d399;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+        }
 
-.btn-primary {
-  padding: 12px 30px;
-  background: linear-gradient(135deg, #34d399, #10b981);
-  color: #020617;
-  font-weight: 600;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s ease;
-  box-shadow: 0 8px 25px rgba(52, 211, 153, 0.35);
-}
+        .header-logo img {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            display: block;
+        }
 
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(52, 211, 153, 0.5);
-}
+        /* SECTIONS */
+        section {
+            padding: 80px 10%;
+        }
 
-.btn-secondary {
-  padding: 12px 30px;
-  border: 2px solid #34d399;
-  color: #34d399;
-  font-weight: 600;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
+        h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
 
-.btn-secondary:hover {
-  background: #34d399;
-  color: #020617;
-}
+        /* SERVICES */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 50px;
+        }
 
-.header-logo img {
-  width: 100%;
-  max-width: 400px;
-  margin: auto;
-  display: block;
-}
+        .service-item {
+            display: flex;
+            gap: 20px;
+        }
 
-/* ================= SECTIONS ================= */
-section {
-  padding: 80px 10%;
-}
+        .service-dot {
+            width: 18px;
+            height: 18px;
+            background: #7f1d1d;
+            border-radius: 50%;
+            margin-top: 8px;
+        }
 
-h2 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 50px;
-}
+        .service-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
 
-/* ================= SERVICES ================= */
-.services-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 50px;
-}
+        .service-content p {
+            color: #cbd5f5;
+            font-size: 0.95rem;
+        }
 
-.service-item {
-  display: flex;
-  gap: 20px;
-  flex-direction: row;
-}
+        /* PROCESS */
+        .process {
+            background: linear-gradient(180deg, #f1f5fb 0%, #ffffff 100%);
+            color: #020617;
+        }
 
-.service-dot {
-  width: 18px;
-  height: 18px;
-  background: #7f1d1d;
-  border-radius: 50%;
-  margin-top: 8px;
-  flex-shrink: 0;
-}
+        .process-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
 
-.service-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
+        .process-text h2 {
+            text-align: left;
+        }
 
-.service-content p {
-  color: #cbd5f5;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+        .process-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
 
-/* ================= PROCESS ================= */
-.process {
-  background: linear-gradient(180deg, #f1f5fb 0%, #ffffff 100%);
-  color: #020617;
-}
+        .feature {
+            display: flex;
+            gap: 10px;
+        }
 
-.process-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-}
+        .process-image img {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            display: block;
+        }
 
-.process-text h2 {
-  text-align: left;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
+        /* CONTACT */
+        .contact-box {
+            text-align: center;
+        }
 
-.process-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  max-width: 520px;
-}
+        .contact-info {
+            margin-top: 20px;
+        }
 
-.process-features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
+        .phone, .email {
+            display: block;
+            margin: 10px;
+            font-size: 1.3rem;
+            color: #34d399;
+        }
 
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-}
-
-.feature span {
-  font-size: 1.2rem;
-}
-
-.process-image img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  display: block;
-  margin: auto;
-}
-
-/* ================= CONTACT ================= */
-.contact-box {
-  text-align: center;
-}
-
-.contact-box .contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.contact-box .phone,
-.contact-box .email {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #34d399;
-  background: #0f172a;
-  padding: 12px 25px;
-  border-radius: 12px;
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-box .phone:hover,
-.contact-box .email:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(52, 211, 153, 0.5);
-}
-
-/* ================= MOBILE ================= */
-@media(max-width: 768px) {
-  header {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 80px 5% 60px;
-  }
-
-  .header-buttons {
-    justify-content: center;
-  }
-
-  .services-list {
-    grid-template-columns: 1fr;
-  }
-
-  .service-item {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-
-  .process-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .process-features {
-    grid-template-columns: 1fr;
-  }
-
-  .process-text h2 {
-    font-size: 1.6rem;
-  }
-
-  .process-text p {
-    font-size: 0.95rem;
-  }
-
-  .header-logo img {
-    max-width: 300px;
-    margin-top: 20px;
-  }
-}
-
-/* Extra small screens */
-@media(max-width: 480px) {
-  .header-text h1 {
-    font-size: 2rem;
-  }
-
-  .process-text h2 {
-    font-size: 1.4rem;
-  }
-
-  .process-text p {
-    font-size: 0.9rem;
-  }
-}
-</style>
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="logo"><a href="index.html">Elite Connect</a></div>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+    <!-- NAV -->
+    <nav>
+        <div class="logo"><a href="/">Elite Connect</a></div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="/Home/Login">Login</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<!-- HEADER -->
-<header>
-  <div class="header-text">
-    <h1>Elite Connect</h1>
-    <p>
-      We connect businesses with professional telemarketing,
-      customer service, and recruitment solutions.
-    </p>
+    <!-- HEADER -->
+    <header>
+        <div class="header-text">
+            <h1>Elite Connect</h1>
+            <p>
+                We connect businesses with professional telemarketing,
+                customer service, and recruitment solutions.
+            </p>
 
-    <div class="header-buttons">
-      <a href="packages.html" class="btn-primary">View Packages</a>
-      <a href="#contact" class="btn-secondary">Contact Us</a>
-    </div>
-  </div>
+            <div class="header-buttons">
+                <a href="/Home/Packages" class="btn-primary">View Packages</a>
+                <a href="#contact" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
 
-  <div class="header-logo">
-    <img src="logo.png.png" alt="Elite Connect Logo">
-  </div>
-</header>
+        <div class="header-logo">
+            <img src="/logo.png.png" alt="Elite Connect Logo">
+        </div>
+    </header>
 
-<!-- SERVICES -->
-<section id="services">
-  <h2>Our Services</h2>
+    <!-- SERVICES -->
+    <section id="services">
+        <h2>Our Services</h2>
 
-  <div class="services-list">
-    <div class="service-item">
-      <div class="service-dot"></div>
-      <div class="service-content">
-        <h3>Telemarketing & Lead Generation</h3>
-        <p>
-          We help businesses connect with high-quality prospects and convert
-          them into loyal customers through targeted campaigns.
-        </p>
-      </div>
-    </div>
+        <div class="services-list">
+            <div class="service-item">
+                <div class="service-dot"></div>
+                <div class="service-content">
+                    <h3>Telemarketing & Lead Generation</h3>
+                    <p>
+                        We help businesses connect with high-quality prospects and convert
+                        them into loyal customers.
+                    </p>
+                </div>
+            </div>
 
-    <div class="service-item">
-      <div class="service-dot"></div>
-      <div class="service-content">
-        <h3>Customer Service</h3>
-        <p>
-          Professional phone, email, and live chat support handled by trained agents.
-        </p>
-      </div>
-    </div>
+            <div class="service-item">
+                <div class="service-dot"></div>
+                <div class="service-content">
+                    <h3>Customer Service</h3>
+                    <p>
+                        Professional phone, email, and chat support.
+                    </p>
+                </div>
+            </div>
 
-    <div class="service-item">
-      <div class="service-dot"></div>
-      <div class="service-content">
-        <h3>Insurance Agent Recruiting</h3>
-        <p>
-          We recruit qualified insurance agents using a professional,
-          data-driven hiring process.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="service-item">
+                <div class="service-dot"></div>
+                <div class="service-content">
+                    <h3>Insurance Agent Recruiting</h3>
+                    <p>
+                        We recruit qualified agents using data-driven methods.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- PROCESS -->
-<section class="process">
-  <div class="process-container">
+    <!-- PROCESS -->
+    <section class="process">
+        <div class="process-container">
+            <div class="process-text">
+                <h2>How do we connect you with qualified leads?</h2>
+                <p>
+                    We use advanced strategies to deliver high-quality leads tailored to your business.
+                </p>
 
-    <div class="process-text">
-      <h2>How do we connect you with qualified leads for your business?</h2>
-      <p>
-        We use proven strategies and advanced analytics to deliver highly targeted
-        leads tailored to your business goals. By leveraging multiple online platforms
-        and data-driven processes, we ensure consistent, high-quality results.
-      </p>
+                <div class="process-features">
+                    <div class="feature">🎙️ Call Recordings</div>
+                    <div class="feature">📊 Daily Reports</div>
+                    <div class="feature">📝 Scripts</div>
+                    <div class="feature">🎧 English Agents</div>
+                </div>
+            </div>
 
-      <div class="process-features">
-        <div class="feature"><span>🎙️</span>Call Recordings</div>
-        <div class="feature"><span>📊</span>Daily Reports</div>
-        <div class="feature"><span>📝</span>Customized Scripts</div>
-        <div class="feature"><span>🎧</span>Fluent English Speakers</div>
-      </div>
-    </div>
+            <div class="process-image">
+                <img src="/logo2.png" alt="">
+            </div>
+        </div>
+    </section>
 
-    <div class="process-image">
-      <img src="logo2.png" alt="Qualified Leads">
-    </div>
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="contact-box">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our team</p>
+            <div class="contact-info">
+                <span class="phone">📞 239-480-4946</span>
+                <span class="email">✉️ eliteconnectstation@gmail.com</span>
+            </div>
+        </div>
+    </section>
 
-  </div>
-</section>
-
-
-  <div class="contact-box">
-    <p>Get in touch with our team today</p>
-    <div class="contact-info">
-      <div class="phone">📞 239-480-4946</div>
-      <div class="email">✉️ eliteconnectstation@gmail.com</div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 Elite Connect. All Rights Reserved.
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Elite Connect. All Rights Reserved.
+    </footer>
 
 </body>
 </html>
-
-
-
